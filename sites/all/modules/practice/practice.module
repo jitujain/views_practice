@@ -1,0 +1,38 @@
+<?php
+/*
+*hook_menu function implementation
+*/
+  function Practice_menu(){
+    $items['link/view'] = array(
+      'title' => 'Books ',
+      'description' => 'Simple custom hook_menu() implementation.',
+      'page callback' => 'view_page',
+      'access callback' => TRUE,
+      'type' => MENU_CALLBACK,
+    );
+    $items['link/view5'] = array(
+      'title' => 'Books ',
+      'description' => 'Simple custom hook_menu() implementation.',
+      'page callback' => 'view_page5',
+      'access callback' => TRUE,
+      'type' => MENU_CALLBACK,
+    );
+    return $items;
+  }
+
+  function view_page() {
+
+    $url ='http://localhost/practice/books';
+  drupal_goto($url ,array('external' => TRUE));
+  }
+
+  function view_page5() {
+
+    $url ='http://localhost/practice/book-location';
+  drupal_goto($url ,array('external' => TRUE));
+  }
+/*
+*Creation of a form
+*/
+
+
